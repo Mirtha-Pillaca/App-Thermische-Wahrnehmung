@@ -352,8 +352,9 @@ with tab3: # modelle Komfort
     #    param_col1, param_col2 = st.columns(2)
 
         such_modus = st.selectbox(
-            "GridSearch / RandomSearch-Intensität:",
-            ["Schnelle Suche (Live-Demo)", "Normale Suche (mit RandomSearch)", "Intensive Suche (mit GridSearch)"],
+            "GridSearch / RandomSearch-Intensität (online-Version beeinhaltet nur schnelle Suche!):",
+            #["Schnelle Suche (Live-Demo)", "Normale Suche (mit RandomSearch)", "Intensive Suche (mit GridSearch)"],
+            ["Schnelle Suche (Live-Demo)"],
         )    
 
         ######################################################
@@ -363,8 +364,8 @@ with tab3: # modelle Komfort
         if such_modus == "Schnelle Suche (Live-Demo)":
             # Extrem schlank: Fokus auf die 3 wichtigsten Hebel, minimale Listen
             param = {
-            "classifier__max_depth": [12],
-            "classifier__n_estimators": [100],
+            "classifier__max_depth": [6],
+            "classifier__n_estimators": [50],
             "classifier__min_samples_leaf": [2],
             #"classifier__min_samples_split": [70],
             "classifier__max_features": ["sqrt"],
