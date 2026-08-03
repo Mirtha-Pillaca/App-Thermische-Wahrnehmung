@@ -115,14 +115,14 @@ with tab_4:
     c1, c2 = st.columns(2)
 
     with c1:
-        safe_st_image("datenbank/images/neon_01.jpg", "Abbildung 1: Initialisierung des Cloud-Projekts auf AWS Frankfurt.")
+        safe_st_image("Datenbank/images/neon_01.jpg", "Abbildung 1: Initialisierung des Cloud-Projekts auf AWS Frankfurt.")
         st.markdown(
             "**Cloud-Provisionierung:** Einrichtung des serverlosen PostgreSQL-Clusters in der Region "
             "AWS Europe Central 1 (Frankfurt) zur Gewährleistung minimaler Latenzzeiten bei Abfragen."
         )
 
     with c2:
-        safe_st_image("datenbank/images/neon_02.jpg", "Abbildung 2: Architektur-Übersicht der Compute-Ressourcen im Neon-Dashboard.")
+        safe_st_image("Datenbank/images/neon_02.jpg", "Abbildung 2: Architektur-Übersicht der Compute-Ressourcen im Neon-Dashboard.")
         st.markdown(
             "**Infrastruktur-Monitoring:** Überwachung von Speicher (Storage) und Rechenleistung (Compute-Units) "
             "in Echtzeit. Generierung des sicheren SSL-Verbindungsstrings für die Backend-Kopplung."
@@ -137,14 +137,14 @@ with tab_4:
     c3, c4 = st.columns(2)
 
     with c3:
-        safe_st_image("datenbank/images/neon_03.jpg", "Abbildung 3: Detaillierte Projekt-Übersicht und Verbindungsparameter.")
+        safe_st_image("Datenbank/images/neon_03.jpg", "Abbildung 3: Detaillierte Projekt-Übersicht und Verbindungsparameter.")
         st.markdown(
             "**Datenbank-Konfiguration:** Verwaltung der Datenbank-Instanzen und Endpunkte. Sichere Bereitstellung "
             "der Zugriffsrechte für den DB-Owner zur Datenmanipulation."
         )
 
     with c4:
-        safe_st_image("datenbank/images/neon_04.jpg", "Abbildung 4: SQL DDL-Skript im integrierten Neon SQL Editor.")
+        safe_st_image("Datenbank/images/neon_04.jpg", "Abbildung 4: SQL DDL-Skript im integrierten Neon SQL Editor.")
         st.markdown(
             "**Tabellen-Strukturierung (DDL):** Generierung des relationalen Datenbankschemas. Erstellung der "
             "Dimensionstabelle (`dim_buildings`) und der zentralen Faktentabelle (`fact_thermal_records`) "
@@ -160,7 +160,7 @@ with tab_4:
     c5, _ = st.columns([1,1])
 
     with c5:
-        safe_st_image("datenbank/images/neon_05.jpg", "Abbildung 5: Robustes Python-Skript.")
+        safe_st_image("Datenbank/images/neon_05.jpg", "Abbildung 5: Robustes Python-Skript.")
         st.markdown(
             "**ETL-Pipeline:** Automatisierter Datentransfer via Python. Das Skript bereinigt"
             "Metadaten und lädt die **109.033 Zeilen** mithilfe optimierter Blockgrößen "
@@ -176,14 +176,14 @@ with tab_4:
     c6, c7 = st.columns(2)
 
     with c6:
-        safe_st_image("datenbank/images/neon_06.jpg", "Abbildung 6: Strukturierte Tabellen-Ansicht innerhalb der Neon-Datenbank-Konsole.")
+        safe_st_image("Datenbank/images/neon_06.jpg", "Abbildung 6: Strukturierte Tabellen-Ansicht innerhalb der Neon-Datenbank-Konsole.")
         st.markdown(
             "**Daten-Validierung:** Direktprüfung der hochgeladenen Datensätze in der Cloud zur Gewährleistung "
             "von Datenkonsistenz und fehlerfreien Datentypen vor der BI-Verknüpfung."
         )
 
     with c7:
-        safe_st_image("datenbank/images/neon_07.jpg", "Abbildung 7: Konfiguration der nativen PostgreSQL-Schnittstelle in Power BI.")
+        safe_st_image("Datenbank/images/neon_07.jpg", "Abbildung 7: Konfiguration der nativen PostgreSQL-Schnittstelle in Power BI.")
         st.markdown(
             "**DirectQuery / Import-Modus:** Anbindung der Cloud-Datenbank an das analytische Frontend. "
             "Einfügen des verschlüsselten AWS-Endpunkts und Authentifizierung des DB-Owners."
@@ -191,7 +191,7 @@ with tab_4:
     
     c8, _ = st.columns([1,1])
     with c8:
-        safe_st_image("datenbank/images/neon_08.jpg", "Abbildung 8: Ausführung und Laden der Daten in die BI-Umgebung.")
+        safe_st_image("Datenbank/images/neon_08.jpg", "Abbildung 8: Ausführung und Laden der Daten in die BI-Umgebung.")
         st.markdown(
             "**Verbindungs-Aufbau:** Datenübertragung aus Neon in das relationale Modell. Die Tabellen "
             "werden ohne Informationsverlust in den Hauptspeicher der BI-Anwendung geladen."
@@ -206,14 +206,14 @@ with tab_4:
     c9, c10 = st.columns(2)
 
     with c9:
-        safe_st_image("datenbank/images/neon_09.jpg", "Abbildung 9: Komponenten-Übersicht des Datenmodells.")
+        safe_st_image("Datenbank/images/neon_09.jpg", "Abbildung 9: Komponenten-Übersicht des Datenmodells.")
         st.markdown(
             "**System-Architektur:** Validierung der einzelnen Datenkomponenten. Überprüfung der Datenintegrität "
             "und Vorbereitung der Kennzahlen-Berechnungen (Measures)."
         )
 
     with c10:
-        safe_st_image("datenbank/images/neon_10.jpg", "Abbildung 10: Finales Schema.")
+        safe_st_image("Datenbank/images/neon_10.jpg", "Abbildung 10: Finales Schema.")
         st.markdown(
             "**Datenmodellierung (Star Schema):** Verknüpfung der Faktentabelle mit der Dimensionstabelle über "
             "das gemeinsame Feld `building_id`. Dieses relationale Design sichert die referenzielle Integrität "
@@ -222,5 +222,5 @@ with tab_4:
  
     c11, _ = st.columns([1,1])
     with c11:
-        safe_st_image("datenbank/images/neon_11.jpg", "Abbildung 11: Power Bi Relationales Datenmodell.")
+        safe_st_image("Datenbank/images/neon_11.jpg", "Abbildung 11: Power Bi Relationales Datenmodell.")
        
