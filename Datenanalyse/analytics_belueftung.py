@@ -156,7 +156,10 @@ tab1, tab2, tab3 = st.tabs(["🌍 Globale Übersicht", "⚡Belüftungsart", "�
 # 💾 3. DATENLADUNG & VARIABLEN-MAPPING
 # ==============================================================================
 @st.cache_data
-df = pd.read_csv("Daten/db_bereinigt_final.csv")
+def load_data():
+    return pd.read_csv("Daten/db_bereinigt_final.csv")
+df = load_data()
+
 df["thermal_sensation_cat"] = df["thermal_sensation"].apply(map_tsv) 
 df["thermal_preference_cat"] = df["thermal_preference"].map(tp_map) 
 df["thermal_comfort_cat"] = df["thermal_comfort"].apply(map_tc) 
@@ -167,26 +170,22 @@ df["thermal_acceptability_cat"] = df["thermal_acceptability"].map(ta_map)
 # ==============================================================================
 
 with tab1:
-    # Laden und Vorbereiten der globalen Big-Data-Struktur im Tab-Scope
-    @st.cache_data
-    df_global = pd.read_csv("Daten/db_bereinigt_final.csv")
-    
     # Absolute kategoriale Zuweisung der Komfortmetriken
-    df_global["thermal_sensation_cat"] = df_global["thermal_sensation"].apply(map_tsv) 
-    df_global["thermal_preference_cat"] = df_global["thermal_preference"].map(tp_map) 
-    df_global["thermal_comfort_cat"] = df_global["thermal_comfort"].apply(map_tc) 
-    df_global["thermal_acceptability_cat"] = df_global["thermal_acceptability"].map(ta_map)
+    df["thermal_sensation_cat"] = df["thermal_sensation"].apply(map_tsv) 
+    df["thermal_preference_cat"] = df["thermal_preference"].map(tp_map) 
+    df["thermal_comfort_cat"] = df["thermal_comfort"].apply(map_tc) 
+    df["thermal_acceptability_cat"] = df["thermal_acceptability"].map(ta_map)
     
     # Normalisierung der Spaltenwerte zur Vermeidung von Formatierungsfehlern
-    df_global['cooling_type'] = df_global['cooling_type'].fillna('unknown').astype(str).str.lower().str.strip()
-    df_global['building_type'] = df_global['building_type'].fillna('unknown').astype(str).str.strip()
-    df_global['gender'] = df_global['gender'].fillna('unknown').astype(str).str.lower().str.strip()
-    df_global['age'] = pd.to_numeric(df_global['age'], errors='coerce')
+    df['cooling_type'] = df['cooling_type'].fillna('unknown').astype(str).str.lower().str.strip()
+    df['building_type'] = df['building_type'].fillna('unknown').astype(str).str.strip()
+    df['gender'] = df['gender'].fillna('unknown').astype(str).str.lower().str.strip()
+    df['age'] = pd.to_numeric(df['age'], errors='coerce')
     
     # 🌟 MAẞNAHME: Ausschluss von 'unknown'-Werten auf globaler Ebene für Tab 1
-    df_global = df_global[
-        (df_global['cooling_type'] != 'unknown') & 
-        (df_global['building_type'].str.lower() != 'unknown')
+    df_global = df[
+        (df['cooling_type'] != 'unknown') & 
+        (df['building_type'].str.lower() != 'unknown')
     ]
     
     st.subheader("Wissenschaftlicher Leitfaden: Globale makroskopische Analyse nach Gebäude- und Belüftungsstruktur")
