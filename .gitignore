@@ -10,6 +10,8 @@ venv/
 env/
 .venv/
 .env
+thermische_app_env/
+
 
 # Jupyter
 .ipynb_checkpoints/
