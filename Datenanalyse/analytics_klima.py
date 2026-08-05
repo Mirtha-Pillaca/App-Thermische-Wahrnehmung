@@ -172,7 +172,10 @@ def create_bars(y_domain):
 # ---------------------------------------------------------
 # Daten laden
 # ---------------------------------------------------------
-df = pd.read_csv("Daten/db_bereinigt_final.csv")
+@st.cache_data
+def load_data():
+    return pd.read_csv("Daten/db_bereinigt_final.csv")
+df = load_data()
 
 # ---------------------------------------------------------
 # Seitentitel
