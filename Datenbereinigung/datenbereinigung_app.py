@@ -26,7 +26,7 @@ df_bereinigt = load_data()
 # Datensatz vor Standardisierung von thermal_comfort und thermal_sensation
 @st.cache_data
 def load_data():
-    return pd.read_csv("Daten/db_bereinigt_komplett.csv")
+    return pd.read_csv("Daten/db_datensatz_komplett.csv")
 df = load_data()
 
 # ---------------------------------------------------------
