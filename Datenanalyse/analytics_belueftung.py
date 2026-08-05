@@ -155,6 +155,7 @@ tab1, tab2, tab3 = st.tabs(["🌍 Globale Übersicht", "⚡Belüftungsart", "�
 # ==============================================================================
 # 💾 3. DATENLADUNG & VARIABLEN-MAPPING
 # ==============================================================================
+@st.cache_data
 df = pd.read_csv("Daten/db_bereinigt_final.csv")
 df["thermal_sensation_cat"] = df["thermal_sensation"].apply(map_tsv) 
 df["thermal_preference_cat"] = df["thermal_preference"].map(tp_map) 
@@ -167,6 +168,7 @@ df["thermal_acceptability_cat"] = df["thermal_acceptability"].map(ta_map)
 
 with tab1:
     # Laden und Vorbereiten der globalen Big-Data-Struktur im Tab-Scope
+    @st.cache_data
     df_global = pd.read_csv("Daten/db_bereinigt_final.csv")
     
     # Absolute kategoriale Zuweisung der Komfortmetriken
