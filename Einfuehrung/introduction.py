@@ -36,6 +36,7 @@ with tab1:
 
     # --- Bild zu Auftrag, Ansatz und Ziel ---
     st.image("Einfuehrung/images/bild_intro.png", width=1300)
+    st.write("Bild: KI-generiert")
     st.markdown("<br><br>", unsafe_allow_html=True)
 
     # --- Text zu Themenwahl ---
@@ -231,6 +232,7 @@ with tab3:
         st.markdown('<div class="team-card">Sabrina</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         st.image("Einfuehrung/images/psychology.png", width=180)
+        st.markdown('<p style="font-size: 12px;">Bild: KI-generiert</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-role2">Data Analyst</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-task">Aufgaben: <br> Datenbereinigung <br> Datenanalyse</p>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -246,6 +248,7 @@ with tab3:
         st.markdown('<div class="team-card">Dianela</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         st.image("Einfuehrung/images/informatic_engineering.png", width=180)
+        st.markdown('<p style="font-size: 12px;">Bild: KI-generiert</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-role2">Data Analyst</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-task">Aufgaben: <br> Datenbank <br> Datenanalyse</p>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -261,6 +264,7 @@ with tab3:
         st.markdown('<div class="team-card">Mirtha</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         st.image("Einfuehrung/images/physicist.png", width=180)
+        st.markdown('<p style="font-size: 12px;">Bild: KI-generiert</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-role3">Data Scientist</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-task">Aufgaben: <br> Entwicklung der GitHub- und Streamlit-Architektur <br> Datenanalyse</p>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -275,6 +279,7 @@ with tab3:
         st.markdown('<div class="team-card">Daniel</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         st.image("Einfuehrung/images/civil_engineering.png", width=180)
+        st.markdown('<p style="font-size: 12px;">Bild: KI-generiert</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-role3">Data Scientist</p>', unsafe_allow_html=True)
         st.markdown('<p class="team-task">Aufgaben:  <br> Machine Learning  <br>  Entwicklung prädiktiver Modelle </p>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)

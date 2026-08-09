@@ -57,6 +57,7 @@ Diese App soll Wissenschaftler:innen, Studierende und Analyst:innen darin unters
 
 ## 📁 Projektstruktur
 
+```text
 ASHRAE_Thermal_Comfort_APP/
 │
 ├── app_projekt.py
@@ -71,6 +72,7 @@ ASHRAE_Thermal_Comfort_APP/
 ├── daten/
 ├── requirements.txt
 └── Readme.md
+```
 
 ---
 

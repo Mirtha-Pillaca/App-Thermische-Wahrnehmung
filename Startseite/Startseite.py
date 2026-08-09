@@ -67,6 +67,7 @@ if image_base64:
                 border-radius: 20px;
                 box-shadow: 0px 6px 20px rgba(0,0,0,0.45);
             " />
+            Bild: KI-generiert
         </div>
     </div>
         """
