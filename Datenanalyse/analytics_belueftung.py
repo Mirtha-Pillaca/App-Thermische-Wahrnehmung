@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches  # 🌟 Importiert für die perfekte Skalierung der Legenden-Quadrate
 import streamlit as st
 import pandas as pd
+from app_projekt import df
 
 st.set_page_config(page_title="Belüftungsart", layout="wide", initial_sidebar_state="expanded")
 
@@ -155,10 +156,6 @@ tab1, tab2, tab3 = st.tabs(["🌍 Globale Übersicht", "⚡Belüftungsart", "�
 # ==============================================================================
 # 💾 3. DATENLADUNG & VARIABLEN-MAPPING
 # ==============================================================================
-@st.cache_data
-def load_data():
-    return pd.read_csv("Daten/db_bereinigt_final.csv")
-df = load_data()
 
 df["thermal_sensation_cat"] = df["thermal_sensation"].apply(map_tsv) 
 df["thermal_preference_cat"] = df["thermal_preference"].map(tp_map) 

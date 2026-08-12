@@ -8,17 +8,10 @@ import matplotlib.pyplot as plt
 from tabulate import tabulate
 from PIL import Image
 from sklearn.linear_model import LinearRegression
+from app_projekt import df
 
 
 st.set_page_config(page_title="Thermischekomfort Datenanalyse", layout="wide", initial_sidebar_state="expanded")
-# Analyse der thermischen Komfortparameter
-# ---------------------------------------------------------
-# Daten laden
-# ---------------------------------------------------------
-@st.cache_data
-def load_data():
-    return pd.read_csv("Daten/db_bereinigt_final.csv")
-df = load_data()
 
 
 st.title(" 📊 Analyse der thermischen Wahrnehmung und Einflussgrößen")

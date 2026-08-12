@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import altair as alt
 import pydeck as pdk
 import math
+from app_projekt import df
 
 # ============================================================
 # Seitenkonfigurationen
@@ -18,15 +19,11 @@ st.set_page_config(layout="wide")
 # Funktionen definieren
 # ============================================================
 # --- Laden der Daten ---
-@st.cache_data
-def load_data():
-    df = pd.read_csv("Daten/db_bereinigt_final.csv")
-    df_original = df.copy()
-    df["operative_temperature"] = pd.to_numeric(df["operative_temperature"], errors="coerce")
-    df["thermal_sensation"] = pd.to_numeric(df["thermal_sensation"], errors="coerce")
-    return df, df_original
 
-df, df_original = load_data()
+df_original = df.copy()
+df["operative_temperature"] = pd.to_numeric(df["operative_temperature"], errors="coerce")
+df["thermal_sensation"] = pd.to_numeric(df["thermal_sensation"], errors="coerce")
+
 
 # --- Mehrfarbige Kreise für Klimazonen und Klimatypen erstellen ---
 def create_pie_segments(df, climate_column, radius=1.5):
@@ -385,7 +382,7 @@ with col_plot1:
         )
     )
 
-    st.altair_chart(chart + labels, use_container_width=True)
+    st.altair_chart(chart + labels, width="stretch")
 
 # ---------------------------------------------------------
 # Spalte col_plot2 
@@ -439,7 +436,7 @@ with col_plot2:
         )
     )
 
-    st.altair_chart(chart + labels, use_container_width=True)
+    st.altair_chart(chart + labels, width="stretch")
 
 # ---------------------------------------------------------
 # Spalte col_map 
@@ -748,7 +745,7 @@ with col_map:
                         # Dataframe
                         st.dataframe(
                             zone_df,
-                            use_container_width=True,
+                            width="stretch",
                             hide_index=True
                         )
 
@@ -767,7 +764,7 @@ with col_map:
                         # Dataframe
                         st.dataframe(
                             zone_df,
-                            use_container_width=True,
+                            width="stretch",
                             hide_index=True
                         )
 
@@ -786,7 +783,7 @@ with col_map:
                         # Dataframe
                         st.dataframe(
                             zone_df,
-                            use_container_width=True,
+                            uwidth="stretch",
                             hide_index=True
                         )
 
@@ -805,7 +802,7 @@ with col_map:
                         # Dataframe
                         st.dataframe(
                             zone_df,
-                            use_container_width=True,
+                            width="stretch",
                             hide_index=True
                         )
 

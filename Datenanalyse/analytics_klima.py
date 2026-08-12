@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import chi2_contingency
 import plotly.express as px
 import math
+from app_projekt import df
 
 
 # ---------------------------------------------------------
@@ -164,18 +165,18 @@ def create_bars(y_domain):
 
     st.altair_chart(
         chart,
-        use_container_width=True
+        width="stretch"
     )
 
     return thermal_stats
 
-# ---------------------------------------------------------
-# Daten laden
-# ---------------------------------------------------------
-@st.cache_data
-def load_data():
-    return pd.read_csv("Daten/db_bereinigt_final.csv")
-df = load_data()
+# # ---------------------------------------------------------
+# # Daten laden
+# # ---------------------------------------------------------
+# @st.cache_data
+# def load_data():
+#     return pd.read_csv("Daten/db_bereinigt_final.csv")
+# df = load_data()
 
 # ---------------------------------------------------------
 # Seitentitel
@@ -488,7 +489,7 @@ with tab1:
 
                 st.dataframe(
                     zone_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True
                 )
         # Klimazone Dry
@@ -506,7 +507,7 @@ with tab1:
 
                 st.dataframe(
                     zone_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True
                 )
         # Klimazone Temperate
@@ -524,7 +525,7 @@ with tab1:
 
                 st.dataframe(
                     zone_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True
                 )
         # Klimazone Tropical
@@ -543,7 +544,7 @@ with tab1:
 
                 st.dataframe(
                     zone_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True
                 )
 
@@ -636,6 +637,9 @@ with tab2:
                 df_test[thermal_column]
             )
 
+            if contingency_table.size == 0:
+                continue
+
             # Chi2-Test durchführen
             chi2, p, dof, expected = chi2_contingency(contingency_table)
             # Berechnung der Gesamtzahl aller Beobachtungen
@@ -698,7 +702,7 @@ with tab2:
         # Heatmap anzeigen lassen
         st.plotly_chart(
             fig,
-            use_container_width=True
+            width="stretch"
         )
 
         st.markdown("<br><br>", unsafe_allow_html=True)
@@ -740,7 +744,7 @@ with tab2:
                 st.dataframe(
                     chi2_results_df[chi2_results_df["Klimatische/geografische Variable"] == variable],
                     hide_index=True,
-                    use_container_width=True
+                    width="stretch"
                 )
         st.markdown("<br>", unsafe_allow_html=True)
 
@@ -936,7 +940,7 @@ with tab3:
                 with st.expander(
                         f"**📈 Details zu Ergebnissen Thermischer Komfort und {selected_variable_environment}**"
                         ):
-                        st.dataframe(thermal_stats, use_container_width=True)
+                        st.dataframe(thermal_stats, width="stretch")
             st.markdown("<br>", unsafe_allow_html=True)
 
 
@@ -991,7 +995,7 @@ with tab3:
             with col_results:
                 # Expander mit Details
                 with st.expander(f"**📈 Ergebnisse Thermisches Empfinden und {selected_variable_environment}**"):
-                    st.dataframe(thermal_stats, use_container_width=True)
+                    st.dataframe(thermal_stats, width="stretch")
                 
 
         # ---------------------------------------------------------
@@ -1072,7 +1076,7 @@ with tab3:
             )
 
             # --- Grafik anzeigen ---
-            st.altair_chart(chart, use_container_width=True)
+            st.altair_chart(chart, width="stretch")
 
             # --- Dataframe mit Unknown erstellen ---
             unknown_pct = (
@@ -1161,7 +1165,7 @@ with tab3:
                 with st.expander(
                         f"**📈 Details zu Ergebnissen Thermische Präferenz und {selected_variable_environment}**"
                         ):
-                        st.dataframe(result_df, use_container_width=True)
+                        st.dataframe(result_df, width="stretch")
             st.markdown("<br>", unsafe_allow_html=True)
             
 
@@ -1264,7 +1268,7 @@ with tab3:
                 )
             )
 
-            st.altair_chart(chart, use_container_width=True)
+            st.altair_chart(chart, width="stretch")
 
 
             # --- Ergebnisse ---
@@ -1317,7 +1321,7 @@ with tab3:
                 with st.expander(
                         f"**📈 Ergebnisse Thermische Akzeptanz und {selected_variable_environment} in %**"
                         ):
-                        st.dataframe(acceptability_pct, use_container_width=True)
+                        st.dataframe(acceptability_pct, width="stretch")
 
     # ---------------------------------------------------------
     # Spalten definieren

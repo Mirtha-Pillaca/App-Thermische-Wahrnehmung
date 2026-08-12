@@ -1,5 +1,17 @@
-import warnings 
+import warnings
+import pandas as pd
 import streamlit as st
+
+# ---------------------------------------------------------
+# Daten laden
+# ---------------------------------------------------------
+@st.cache_data
+def lade_csv(pfad):
+    return pd.read_csv(pfad)
+
+df = lade_csv("Daten/db_bereinigt_final.csv")
+df_komplett = lade_csv("Daten/db_datensatz_komplett.csv")
+
 
 # ---------------------------------------------------------
 # Titel der App

@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 from streamlit_echarts import st_echarts
 import matplotlib.pyplot as plt
-
+from app_projekt import df as df_bereinigt
+from app_projekt import df_komplett
 
 # ---------------------------------------------------------
 # Seitenkonfigurationen
@@ -14,20 +15,20 @@ st.set_page_config(page_title="Datenbereinigung - ASHRAE", layout="wide",initial
 # --------------------------------------------------------- 
 st.title("🔍 Bereinigung des Datensatzes")
 
-# ---------------------------------------------------------
-# Datensätze laden
-# --------------------------------------------------------- 
-# Bereinigter Datensatz
-@st.cache_data
-def load_data():
-    return pd.read_csv("Daten/db_bereinigt_final.csv")
-df_bereinigt = load_data()
+# # ---------------------------------------------------------
+# # Datensätze laden
+# # --------------------------------------------------------- 
+# # Bereinigter Datensatz
+# @st.cache_data
+# def load_data():
+#     return pd.read_csv("Daten/db_bereinigt_final.csv")
+# df_bereinigt = load_data()
 
-# Datensatz vor Standardisierung von thermal_comfort und thermal_sensation
-@st.cache_data
-def load_data():
-    return pd.read_csv("Daten/db_datensatz_komplett.csv")
-df = load_data()
+# # Datensatz vor Standardisierung von thermal_comfort und thermal_sensation
+# @st.cache_data
+# def load_data():
+#     return pd.read_csv("Daten/db_datensatz_komplett.csv")
+# df_komplett = load_data()
 
 # ---------------------------------------------------------
 # Tabs definieren
@@ -109,7 +110,7 @@ with tab1:
 
     st.dataframe(
     df_groups,
-    use_container_width=True,
+    width="stretch",
     hide_index=True
     )
 
@@ -263,7 +264,7 @@ with tab2:
                 
                 # Grafik für thermal_comfort
                 fig, ax = plt.subplots(figsize=(6,4))
-                ax.hist(df["thermal_comfort"].dropna(), bins=20, color="#4C72B0", edgecolor="white")
+                ax.hist(df_komplett["thermal_comfort"].dropna(), bins=20, color="#4C72B0", edgecolor="white")
                 ax.set_title("Originale Thermal Comfort Werte")
                 ax.set_xlabel("Wert")
                 ax.set_ylabel("Häufigkeit")
@@ -292,7 +293,7 @@ with tab2:
             with col3:
                 # Grafik für thermal_sensation
                 fig, ax = plt.subplots(figsize=(6,4))
-                ax.hist(df["thermal_sensation"].dropna(), bins=20, color="#4C72B0", edgecolor="white")
+                ax.hist(df_komplett["thermal_sensation"].dropna(), bins=20, color="#4C72B0", edgecolor="white")
                 ax.set_title("Originale Thermal Sensation Werte")
                 ax.set_xlabel("Wert")
                 ax.set_ylabel("Häufigkeit")
@@ -323,8 +324,8 @@ with tab3:
     #  Dimensionen vor der Bereinigung 
     with col1:
         st.write("### 📏 Dimensionen vor Bereinigung")
-        st.write(f"**Zeilen:** {df.shape[0]}")
-        st.write(f"**Spalten:** {df.shape[1]}")
+        st.write(f"**Zeilen:** {df_komplett.shape[0]}")
+        st.write(f"**Spalten:** {df_komplett.shape[1]}")
     # Pfeil
     with col2:
         st.markdown(
