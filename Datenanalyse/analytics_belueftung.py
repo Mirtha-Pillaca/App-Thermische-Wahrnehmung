@@ -308,7 +308,7 @@ with tab2:
     #col_f4,_ = st.columns([1,1])
 
     with col_t2_f1:
-        geo_option = st.selectbox("Geografische Verteilung anzeigen nach:", list(geo_map.keys()), key="geo_opt_t1") 
+        geo_option = st.selectbox("Geografische Verteilung anzeigen nach:", list(geo_map.keys()), key="geo_opt_t1_belueftung") 
         geo_colname = geo_map[geo_option] 
 
      ### Button ####
