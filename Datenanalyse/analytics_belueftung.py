@@ -133,6 +133,7 @@ def plot_comfort_variable(series, labels, colors, title):
     
     plt.tight_layout()
     st.pyplot(fig, width=550)
+    plt.close(fig)
     return True
 
 # ==============================================================================
@@ -308,7 +309,7 @@ with tab2:
     #col_f4,_ = st.columns([1,1])
 
     with col_t2_f1:
-        geo_option = st.selectbox("Geografische Verteilung anzeigen nach:", list(geo_map.keys()), key="geo_opt_t1_belueftung") 
+        geo_option = st.selectbox("Geografische Verteilung anzeigen nach:", list(geo_map.keys()), key="geo_opt_tab2") 
         geo_colname = geo_map[geo_option] 
 
      ### Button ####
@@ -328,7 +329,7 @@ with tab2:
     with col_t2_f2:
         raw_geo_values_t1 = df[geo_colname].dropna().unique().tolist()
         sorted_geo_values_t1 = custom_geo_sort(raw_geo_values_t1)
-        geo_choice = st.selectbox(f"{geo_option} auswählen:", sorted_geo_values_t1, key="geo_cho_t1") 
+        geo_choice = st.selectbox(f"{geo_option} auswählen:", sorted_geo_values_t1, key="geo_cho_tab2") 
     with col_t2_f3:
         df['building_type'] = df['building_type'].fillna('Unknown')
         lista_building_types = sorted(df['building_type'].unique().tolist())
@@ -341,7 +342,7 @@ with tab2:
             "Building Type auswählen:", 
             lista_building_types, 
             index=default_bldg_index, 
-            key="bld_t2"
+            key="bld_tab2"
         )
     with col_t2_f4:
     # 🌟 NEUER FILTER FÜR COOLING TYPE (TAB 1)
@@ -358,7 +359,7 @@ with tab2:
                     return (1, c_str) # Alle anderen (z.B. natural ventilation) in die Mitte
                     
         sorted_cooling_t1 = sorted(raw_cooling_t1, key=cooling_sort_logic)
-        cooling_choice = st.selectbox("Cooling Type auswählen:", sorted_cooling_t1, key="cool_t1")
+        cooling_choice = st.selectbox("Cooling Type auswählen:", sorted_cooling_t1, key="cool_tab2")
  
     df_t1_filtered = df[
         (df[geo_colname] == geo_choice) & 
@@ -428,13 +429,13 @@ with tab3:
     col_t3_f4, col_t3_f6 = st.columns(2)
     
     with col_t3_f1:
-        geo_option_t2 = st.selectbox("Geografische Verteilung anzeigen nach:", list(geo_map.keys()), key="geo_opt_t2") 
+        geo_option_t2 = st.selectbox("Geografische Verteilung anzeigen nach:", list(geo_map.keys()), key="geo_opt_tab3") 
         geo_colname_t2 = geo_map[geo_option_t2] 
     with col_t3_f2:
         # 🌟 Sortierung: Americas immer zuerst, Unknown am Ende (Tab 2)
         raw_geo_values_t2 = df[geo_colname_t2].dropna().unique().tolist()
         sorted_geo_values_t2 = custom_geo_sort(raw_geo_values_t2)
-        geo_choice_t2 = st.selectbox(f"{geo_option_t2} auswählen:", sorted_geo_values_t2, key="geo_cho_t2") 
+        geo_choice_t2 = st.selectbox(f"{geo_option_t2} auswählen:", sorted_geo_values_t2, key="geo_cho_tab3") 
 
     ### Button ###
     # ============================================================================== 
@@ -464,7 +465,7 @@ with tab3:
             "Building Type auswählen:", 
             lista_building_types, 
             index=default_bldg_index, 
-            key="bld_t3"
+            key="bld_tab3"
         )    
     with col_t3_f4:
         df['gender'] = df['gender'].fillna('unknown')
@@ -484,7 +485,7 @@ with tab3:
                 return (3, g_str) # unknown und andere nulos landen ganz unten
                 
         lista_genders = sorted(raw_genders, key=gender_sort_logic)
-        gender_choice = st.selectbox("Gender auswählen:", lista_genders, key="gen_t2")    
+        gender_choice = st.selectbox("Gender auswählen:", lista_genders, key="gen_tab3")    
     
     with col_t3_f5:
         # 🌟 NEUER FILTER FÜR COOLING TYPE (TAB 2)
@@ -501,7 +502,7 @@ with tab3:
                 return (1, c_str)
                 
         sorted_cooling_t2 = sorted(raw_cooling_t2, key=cooling_sort_logic_t2)
-        cooling_choice_t2 = st.selectbox("Cooling Type auswählen:", sorted_cooling_t2, key="cool_t2")
+        cooling_choice_t2 = st.selectbox("Cooling Type auswählen:", sorted_cooling_t2, key="cool_tab3")
 
     with col_t3_f6:    
     # Kontinuierlicher numerischer Altersschieberegler für präzise Kohorten-Analysen
