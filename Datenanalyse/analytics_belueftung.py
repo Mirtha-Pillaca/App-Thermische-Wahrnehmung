@@ -420,6 +420,8 @@ with tab2:
 with tab3:
     
     st.subheader("Analyse-Leitfaden: Beeinflusst die Belüftungsart den aktuellen Parameter?")
+    geo_map = { "Region": "region", "Land": "country", "Stadt": "city" } 
+
     
     # Aufteilung der Benutzeroberfläche in Filter und interaktiven Grafikbereich
     col_t3_f1, col_t3_f2, col_t3_f3, col_t3_f5 = st.columns(4)
