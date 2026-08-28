@@ -287,9 +287,9 @@ with tab3: # modelle Komfort
         
         with row1_col1:
             st.subheader("📋 Features")
-            possible_features = ['air_temperature', 'relative_humidity', 'air_speed', 'metabolic_rate', 'clothing_ensemble_insulation', 'radiant_temperature']
+            possible_features = ['air_temperature', 'outdoor_air_temperature', 'relative_humidity', 'air_speed', 'metabolic_rate', 'clothing_ensemble_insulation', 'radiant_temperature']
             
-            default_features = ['air_temperature', 'relative_humidity', 'air_speed', 'metabolic_rate', 'clothing_ensemble_insulation']
+            default_features = ['air_temperature', 'outdoor_air_temperature', 'relative_humidity', 'air_speed', 'metabolic_rate', 'clothing_ensemble_insulation']
             
             selected_features = []
             for feature in possible_features:
@@ -1490,7 +1490,7 @@ with tab6: # Regression clo
         0.55: ("Leichte Übergangskleidung", "👖🧥 (Leichte Hose & dünner Stoffpullover)"),
         0.65: ("Büro-Sommerkleidung", "👖👔 (Dünne Stoffhose & Langarmhemd)"),
         0.75: ("Standard-Übergang", "👖🥼 (Jeans & leichter Pullover/Strickjacke)"),
-        0.85: ("Warmes Outfit", "👖🢪 (Dicke Hose, Langarmhemd & Pullover)"),
+        0.85: ("Warmes Outfit", "👖👔🧥 (Dicke Hose, Langarmhemd & Pullover)"),
         1.00: ("Klassischer Business-Anzug", "👔💼 (Hose, Hemd, Krawatte & Sakko)"),
         1.15: ("Winter-Büro", "👖🧥👔 (Schwere Hose, Hemd & warmer Pullover)"),
         1.30: ("Wärmere Winterkleidung", "👖🧦🧥 (Dicke Hose, Hemd, dicker Pullover & Innenjacke)"),
