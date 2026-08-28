@@ -135,7 +135,7 @@ with tab1: # Übersicht
     with col1:
         st.html(slide_point("Untersuchungen zur Vorhersage der thermischen Wahrnehmung (Klassifizierung)"))
         st.html(slide_smallpoint("<b>Dashboard zur Erstellung von Modellen zur Bestimmung der möglichen Genauigkeit</b>"))
-        st.html(slide_smallpoint("<span style='color: #FF0000; font-weight: bold;'>Kein Dashboard zur Vorhersage von Klassen (unzureichende Genauigkeit der Modell)!</span>"))
+        st.html(slide_smallpoint("<b>Vereinfachtes Dashboard zur Vorhersage von Klassen (unzureichende Genauigkeit der Modell)!</b>"))
     with col2:
         links, mitte, rechts = st.columns([1,2,1])
         with mitte:
@@ -164,7 +164,7 @@ with tab1: # Übersicht
     with col1:
         #st.write("\n")
         st.html(slide_point("Anomaliebetrachtungen"))
-        st.html(slide_smallpoint("Erste Untersuchungen"))
+        st.html(slide_smallpoint("<b>Erste Untersuchungen</b>"))
     with col2:
         links, mitte, rechts = st.columns([1,2,1])
         with mitte:
