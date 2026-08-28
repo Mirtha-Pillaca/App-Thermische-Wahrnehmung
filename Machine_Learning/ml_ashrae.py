@@ -1198,7 +1198,7 @@ with tab5: # classification cooling type
                     
                     # Optische Verschönerungen im sauberen SHAP-Look
                     ax_local.set_title(
-                        f"Einfluss auf Klasse: {selected_class_local}", 
+                        f"Live-Feature-Einfluss auf Klasse: {selected_class_local}", 
                         fontsize=11, fontweight='bold', pad=15
                     )
                     
@@ -1807,7 +1807,7 @@ with tab6: # Regression clo
                     # Titel im sauberen SHAP-Look
                     title_class = predicted_class_name if 'predicted_class_name' in locals() else f"Klasse {target_class_idx}"
                     ax.set_title(
-                        f"Live-Feature-Einfluss für Vorhersage: {title_class}", 
+                        f"Live-Feature-Einfluss für Vorhersage:", 
                         fontsize=11, fontweight='bold', pad=15
                     )
                     
