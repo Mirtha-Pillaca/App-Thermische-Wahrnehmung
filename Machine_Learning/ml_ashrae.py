@@ -2121,11 +2121,11 @@ with tab8: # Fazit
     with links:
         st.html(slide_point("<b>Subjektive Werte</b> sind im Gegensatz zu physikalischen Werten <b>oft nur schwer über Machine Learning zu bestimmen</b>."))
 
-        st.html(slide_point("Eine Vorhersage der Werte für das thermische Empfinden ist stark geprägt von <b>Label Noise</b> und liefert <b>deshalb keine ausreichend genaue Vorhersagen</b>."))
+        st.html(slide_point("Eine Vorhersage der Werte für das thermische Empfinden ist stark geprägt von <b>Label Noise</b> und liefert <b>deshalb keine ausreichend genauen Vorhersagen</b>."))
 
         st.html(slide_point("Die <b>Kühlsungsstrategie konnte recht gut</b> aus den physichen Daten <b>vorhergesagt werden</b>."))
 
-        st.html(slide_point("Eine durchgeführte Regression zur <b>Bestimmung des Kleidungsisolationswerte</b> zeigte Ergebnisse mit einer <b>durchschnittlichen Genauigkeit von etwa 0.12 clo</b>, was in etwas einer Strickjacke oder einem dünnen Shirt entspricht."))
+        st.html(slide_point("Eine durchgeführte Regression zur <b>Bestimmung des Kleidungsisolationswertes</b> zeigte Ergebnisse mit einer <b>durchschnittlichen Genauigkeit von etwa 0.12 clo</b>, was in etwa einer Strickjacke oder einem dünnen Shirt entspricht."))
 
         st.html(slide_point("Die durchgeführten Anomaliebetrachtungen zeigen auffällige Werte die noch genauer zu betrachten wären."))
 
